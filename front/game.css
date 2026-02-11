@@ -1,0 +1,40 @@
+img {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  position: relative;
+}
+
+.clickable-zone1 {
+    position: absolute;
+    top: 25%;
+    width: 25%;
+    height: 60%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.clickable-zone2 {
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.clickable-zone3 {
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    width: 30%;
+    height: 60%;
+    cursor: pointer;
+    z-index: 10;
+}

@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container {
+    display: flex;
+    width: 900px;
+    max-width: 100%;
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.left-side {
+    flex: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/games_on_web.png') no-repeat center;
+    background-size: cover;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 40px;
+}
+
+.right-side h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.05em;
+}
+
+.right-side p {
+    margin-bottom: 30px;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #fff;
+    background: #444;
+}
+
+.login-btn {
+    background: #fff;
+    color: #000;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    transform: scale(1.02);
+    background: #eee;
+}
+
+.bottom-links {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.bottom-links p {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.bottom-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bottom-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .left-side {
+        height: 200px;
+    }
+
+    .right-side {
+        padding: 40px 30px;
+    }
+
+    .container-nav {
+        padding: 20px 30px;
+    }
+}
