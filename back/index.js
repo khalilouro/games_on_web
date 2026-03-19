@@ -1,17 +1,26 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+
+import connectDB from './connectDB/connectDB.js';
+
 const app = express();
-const dotenv = require('dotenv');
+
+// équivalent de __dirname en ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 const port = process.env.PORT || 3000;
 
-const connectDB = require('./connectDB/connectDB');
 connectDB();
 
 app.use(cors());
 app.use(express.json());
+
+// ⚠️ chemins
 app.use(express.static(path.join(__dirname, '../front')));
 
 app.get('/', (req, res) => {
@@ -21,5 +30,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-
