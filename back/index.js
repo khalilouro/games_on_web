@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../front/index.html'));
 });
 
-/*app.get('*', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../front/index.html'));
-});*/
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
