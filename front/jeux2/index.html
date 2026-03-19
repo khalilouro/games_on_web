@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jeu - DOM</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <h1>Jeux 2</h1>
     
+    <div id="home-screen" class="screen">
+        <div class="hero">
+            <h1>Jeu de Puzzle</h1>
+            <p>Choisissez un niveau pour commencer l'aventure.</p>
+        </div>
+
+        <div class="landing-grid-container">
+            <div id="landing-grid" class="landing-grid">
+                <!-- Pieces will be generated via JS -->
+            </div>
+            <div class="landing-actions">
+                <button id="main-play-btn" onclick="startGame()" class="btn-primary">Jouer au Puzzle</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+        <div class="top-bar">
+            <button onclick="goToHome()" class="btn-back">← Retour</button>
+            <h2 id="level-title">Niveau 1</h2>
+        </div>
+        
+        <div class="grid-container">
+            <div class="grid" id="puzzle-grid">
+                <!-- Les cases seront générées en JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

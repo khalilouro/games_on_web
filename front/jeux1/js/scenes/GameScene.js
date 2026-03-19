@@ -1,9 +1,14 @@
 import PlayingState from "../states/PlayingState.js";
+import MenuState from "../states/MenuState.js";
 
 export default class GameScene {
     constructor(game) {
         this.game = game;
-        this.state = new PlayingState();
+        this.state = new MenuState(this);
+    }
+
+    switchState(newState) {
+        this.state = newState;
     }
 
     update(dt) {

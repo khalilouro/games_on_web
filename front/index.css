@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: 'Outfit', sans-serif;
@@ -9,6 +14,8 @@ body {
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
 }
 
 .container {
@@ -21,10 +28,23 @@ body {
 }
 
 .logo {
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: #000;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.logo img,
+.Logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo img:hover,
+.Logo:hover {
+  transform: scale(1.07);
+  opacity: 0.85;
 }
 
 .container-links {
@@ -38,6 +58,7 @@ body {
   color: #000;
   transition: all 0.3s ease;
   position: relative;
+  text-decoration: none;
   margin: 0;
 }
 
@@ -77,6 +98,7 @@ body {
 
 .divmaman {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 80px 40px;
   gap: 40px;
@@ -84,6 +106,10 @@ body {
   margin: -60px auto 0;
   position: relative;
   z-index: 10;
+}
+
+.acceuil {
+  display: flex;
 }
 
 .gauche,
@@ -181,6 +207,75 @@ body {
   border: 2px solid #fff;
 }
 
+#about {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.about-description {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #222;
+  padding: 25px;
+  border-radius: 15px;
+  width: 220px;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.about-desc-card {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-desc-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.card a:hover {
+  background: white;
+  color: black;
+}
+
 @keyframes f {
   from {
     opacity: 0;
@@ -198,17 +293,207 @@ body {
   animation: f 0.8s ease-out forwards;
 }
 
+.toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1000;
+}
+
+.rectangle {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  /* changed to black since header is white */
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 968px) {
+  .nom {
+    font-size: 2.2rem;
+  }
+  
   .divmaman {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    padding: 40px 20px;
+    margin-top: 0;
+  }
+
+  .acceuil {
+    flex-direction: column;
   }
 
   .gauche,
   .droite {
     width: 100%;
+    padding: 10px;
+  }
+
+  .droite {
+    margin-top: 20px;
   }
 
   .container {
-    padding: 20px;
+    padding: 15px 20px;
   }
+
+  /* Show burger on mobile */
+  .toggle {
+    display: flex;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 30px;
+    height: 21px;
+    justify-content: space-between;
+    transition: transform 0.4s ease;
+  }
+
+  .toggle .rectangle {
+    background-color: #000;
+  }
+
+  .toggle.toggle-active {
+    position: fixed;
+    right: 60px; /* (150px sidebar / 2) - (30px toggle / 2) = 60px */
+    transform: none;
+    top: 15px; /* Stay aligned with header row height */
+  }
+
+  .toggle-active .rectangle {
+    background-color: #fff;
+  }
+
+  /* Menu hidden by default on mobile */
+  .container-links {
+    display: none;
+    /* Hide standard links container on mobile */
+  }
+
+  /* Version sidebar pour mobile */
+  .container-links.sidebar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100vh;
+    background-color: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .container-links.sidebar .link {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 15px 0;
+    display: block;
+  }
+
+  .container-links .link::after {
+    background-color: #fff;
+  }
+
+  /* Show menu when active */
+  .sidebar {
+    right: 0;
+  }
+
+  /* Burger Menu Animation */
+  .toggle-active .rectangle {
+    background-color: #fff;
+    /* White when over dark sidebar */
+  }
+
+  .toggle-active .rectangle:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .toggle-active .rectangle:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle-active .rectangle:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .team {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-desc-card {
+    width: 220px;
+  }
+}
+
+/* Contact Section Styles */
+#contact {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-desc {
+  font-size: 1.15rem;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #fff;
+  background: #333;
+}
+
+.submit-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  font-family: inherit;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn:disabled {
+  background: #555;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }

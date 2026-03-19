@@ -3,13 +3,11 @@ export default class Ecouteurs {
         this.canvas = canvas;
         this.keys = {};
 
-        // Keyboard listeners
         window.addEventListener("keydown", (e) => (this.keys[e.code] = true));
         window.addEventListener("keyup", (e) => (this.keys[e.code] = false));
 
-        // Resize listener
         window.addEventListener("resize", () => this.resize());
-        this.resize(); // Initial call
+        this.resize();
     }
 
     isDown(code) {

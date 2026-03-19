@@ -1,42 +1,48 @@
 export default class Player {
     constructor(x, y, color = "#ff0") {
         this.x = x; this.y = y;
-        this.w = 20; this.h = 30; // Smaller size
+        this.w = 60; this.h = 60;
         this.color = color;
         this.vy = 0;
         this.gravity = 1500;
-        this.jumpPower = -350; // Smaller jump
+        this.jumpPower = -350;
         this.onGround = false;
         this.jumpCount = 0;
         this.jumpKeyReleased = true;
-        this.direction = 1; // 1 for right, -1 for left
-        this.ammo = 3;
+        this.direction = 1;
+        this.ammo = 5;
+        this.image = new Image();
+        this.image.src = "assets/images/spongebob.png";
     }
 
     update(dt, canvas) {
         this.vy += this.gravity * dt;
         this.y += this.vy * dt;
-
-        const ground = canvas.height - this.h - 50;
-        if (this.y >= ground) {
-            this.y = ground;
-            this.vy = 0;
-            this.onGround = true;
-        }
     }
 
     draw(ctx) {
-        ctx.fillStyle = this.color;
-        // Head
-        ctx.fillRect(this.x + 5, this.y, 10, 10);
-        // Body
-        ctx.fillRect(this.x, this.y + 10, 20, 15);
-        // Legs
-        ctx.fillRect(this.x, this.y + 25, 5, 5);
-        ctx.fillRect(this.x + 15, this.y + 25, 5, 5);
+        if (this.image.complete && this.image.naturalWidth !== 0) {
+            ctx.save();
+            ctx.translate(this.x + this.w / 2, this.y + this.h / 2);
+            ctx.scale(this.direction, 1);
+
+            ctx.drawImage(this.image, -this.w / 2, -this.h / 2, this.w, this.h);
+            ctx.restore();
+        } else {
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x + 5, this.y, 10, 10);
+            ctx.fillRect(this.x, this.y + 10, 20, 15);
+            ctx.fillRect(this.x, this.y + 25, 5, 5);
+            ctx.fillRect(this.x + 15, this.y + 25, 5, 5);
+        }
     }
 
     getRect() {
-        return { x: this.x, y: this.y, w: this.w, h: this.h };
+        return {
+            x: this.x + 10,
+            y: this.y + 5,
+            w: this.w - 20,
+            h: this.h - 5
+        };
     }
 }

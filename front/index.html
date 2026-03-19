@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Acceuil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludus</title>
+  <link rel="icon" type="image/png" href="assets/images/Logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -11,13 +13,22 @@
 </head>
 
 <body>
+
   <header class="container">
-    <div class="logo">Logo</div>
-    <div class="container-links">
-      <p class="link active">Accueil</p>
-      <p class="link">À propos</p>
-      <p class="link">Services</p>
-      <p class="link">Contact</p>
+    <div class="logo">
+    <img src="assets/images/Logo.png" alt="Logo" class="Logo">
+    </div>
+    <div class="container-links" id="navbar">
+      <a href="#" class="link active">Accueil</a>
+      <a href="#about" class="link">About Us</a>
+      <a href="#contact" class="link">Contact</a>
+    </div>
+
+    <!-- Burger Toggle -->
+    <div class="toggle" id="toggle">
+      <div class="rectangle"></div>
+      <div class="rectangle"></div>
+      <div class="rectangle"></div>
     </div>
   </header>
 
@@ -29,39 +40,91 @@
   <h1 class="nom">Games_on_web</h1>
 
   <div class="divmaman">
-    <div class="gauche">
-      <p class="description">Games On Web est une plateforme dédiée aux jeux jouables directement sur navigateur, sans
-        téléchargement. Elle met en avant des expériences simples, rapides et accessibles à tous.
-        Le site regroupe des jeux variés allant du puzzle au jeu d’action, en passant par des jeux de réflexion. Chaque
-        jeu est pensé pour être intuitif et fun dès les premières secondes.
-        L’objectif est de proposer un divertissement immédiat, que ce soit pour une courte pause ou une session plus
-        longue. L’interface est claire, moderne et optimisée pour tous les écrans.
-        Games On Web valorise la créativité et les projets indépendants développés avec des technologies web.</p>
+    <section class="acceuil">
+      <div class="gauche">
+        <p class="description">Games On Web est une plateforme dédiée aux jeux jouables directement sur navigateur, sans
+          téléchargement. Elle met en avant des expériences simples, rapides et accessibles à tous.
+          Le site regroupe des jeux variés allant du puzzle au jeu d’action, en passant par des jeux de réflexion.
+          Chaque
+          jeu est pensé pour être intuitif et fun dès les premières secondes.
+          L’objectif est de proposer un divertissement immédiat, que ce soit pour une courte pause ou une session plus
+          longue. L’interface est claire, moderne et optimisée pour tous les écrans.
+          Games On Web valorise la créativité et les projets indépendants développés avec des technologies web.</p>
 
-      <div class="manette">
-        <div class="manette-1">
-          <a href="login.html">
-            <img src="assets/images/manette_1.png" alt="Manette 1" class="controller-img">
-          </a>
-          <p class="manette-text">Se Connecter</p>
-        </div>
-        <div class="manette-2">
-          <a href="signup.html">
-            <img src="assets/images/manette_2.png" alt="Manette 2" class="controller-img">
-          </a>
-          <p class="manette-text">S'inscrire</p>
+        <div class="manette">
+          <div class="manette-1">
+            <a href="login.html">
+              <img src="assets/images/manette_1.png" alt="Manette 1" class="controller-img">
+            </a>
+            <p class="manette-text">Se Connecter</p>
+          </div>
+          <div class="manette-2">
+            <a href="signup.html">
+              <img src="assets/images/manette_2.png" alt="Manette 2" class="controller-img">
+            </a>
+            <p class="manette-text">S'inscrire</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="droite">
+      <div class="droite">
         <p class="Jouer">Cliquez pour jouer</p>
-      <a href="game.html">
-        <img class="img" id="img" src="assets/images/background.png" alt="Arrière plan du jeu" >
-      </a>
-      
-    </div>
+        <a href="game.html">
+          <img class="img" id="img" src="assets/images/background.png" alt="Arrière plan du jeu">
+        </a>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+
+      <div class="team">
+
+        <div class="card">
+          <img src="assets/images/khalil.png" alt="Khalil">
+          <h3>Rahhmouni Khalil</h3>
+          <a href="https:/rmkhalil.vercel.app" target="_blank">Portfolio</a>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/riham.jpeg" alt="Riham">
+          <h3>El Rifai Riham</h3>
+          <a href="Portfolio Riham/TD2/index.html" target="_blank">Portfolio</a>
+        </div>
+
+        <div class="card about-desc-card">
+          <h3>Le Projet</h3>
+          <p class="about-description">
+            Nous sommes deux jeunes étudiants en L3 MIAGE passionnés par le développement.
+            Nous avons conçu et réalisé ce site dans le cadre de l'événement <strong>Games on Web</strong>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact-desc">
+        Pour toute collaboration ou proposition de jeu, n'hésitez pas à nous écrire.
+      </p>
+
+      <form action="#" class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Votre Nom" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Votre Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" rows="5" placeholder="Votre Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn" disabled>Envoyer</button>
+      </form>
+    </section>
   </div>
+  
   <script src="index.js"></script>
 </body>
 

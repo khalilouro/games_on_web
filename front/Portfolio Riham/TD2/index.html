@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Riham EL RIFAI – Computer Science Student passionate about web development and design." />
+    <title>Riham EL RIFAI – Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-logo">
+        <span class="logo-dot"></span>
+        <span>Portfolio</span>
+      </div>
+
+      <!-- Hamburger menu (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECTION HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <p class="hero-subtitle">Welcome to my portfolio</p>
+        <h1 class="hero-title">Hi, I'm <br><span class="highlight">Riham EL RIFAI</span></h1>
+        <p class="hero-role">Computer Science Student</p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-primary">Download CV</a>
+          <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="img-glow"></div>
+        <img src="./assets/images/me.png" alt="Photo de Riham EL RIFAI" />
+      </div>
+    </section>
+
+    <!-- SECTION ABOUT -->
+    <section class="section about" id="about">
+      <div class="section-header">
+        <span class="section-tag">Who Am I?</span>
+        <h2>About Me</h2>
+      </div>
+
+      <p class="about-text">
+        I am a computer science student who enjoys learning how technology works and how it can
+        be used to solve real problems. I am especially interested in web development and design,
+        and I like creating clean, modern interfaces that are easy to use.
+      </p>
+
+      <div class="about-info">
+        <div class="info-box">
+          <div class="info-icon">👤</div>
+          <h4>Full Name</h4>
+          <p>Riham EL RIFAI</p>
+        </div>
+        <div class="info-box">
+          <div class="info-icon">✉️</div>
+          <h4>Email</h4>
+          <p>riham.el-rifai@etu.unice.fr</p>
+        </div>
+        <div class="info-box">
+          <div class="info-icon">🔗</div>
+          <h4>LinkedIn</h4>
+          <p><a href="https://www.linkedin.com/in/riham-el-rifai-394a66355/" target="_blank" rel="noopener">Visit Profile</a></p>
+        </div>
+        <div class="info-box">
+          <div class="info-icon">📞</div>
+          <h4>Phone</h4>
+          <p>06 16 64 78 91</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section class="section services" id="services">
+      <div class="section-header">
+        <span class="section-tag">What I do</span>
+        <h2>My Services</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon card-icon--outline">💻</div>
+          <h3>Software<br>Development</h3>
+          <p>Building robust and scalable applications with clean code and best practices.</p>
+        </div>
+        <div class="card card--featured">
+          <div class="card-icon card-icon--filled">DEV</div>
+          <h3>Web<br>Development</h3>
+          <p>Creating dynamic, interactive websites using modern front-end technologies.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon card-icon--outline">🎨</div>
+          <h3>Web<br>Design</h3>
+          <p>Designing beautiful and intuitive user interfaces with great user experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION SKILLS -->
+    <section class="section skills" id="skills">
+      <div class="section-header">
+        <span class="section-tag">My Expertise</span>
+        <h2>My Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">HTML</span>
+            <span class="skill-pct">50%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="--pct: 50%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">CSS</span>
+            <span class="skill-pct">20%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="--pct: 20%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-pct">10%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="--pct: 10%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">PHP</span>
+            <span class="skill-pct">2%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="--pct: 2%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="section-header">
+        <span class="section-tag">Let's talk</span>
+        <h2>Get In Touch</h2>
+      </div>
+      <form class="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fname">First Name</label>
+            <input id="fname" type="text" placeholder="Riham" />
+          </div>
+          <div class="form-field">
+            <label for="lname">Last Name</label>
+            <input id="lname" type="text" placeholder="EL RIFAI" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@email.com" />
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" placeholder="+33 6 00 00 00 00" />
+          </div>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="msg">Message</label>
+          <textarea id="msg" rows="5" placeholder="Your message here..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Send Message ✉️</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 Riham EL RIFAI — All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Hamburger toggle
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', open);
+      });
+
+      // Close menu on link click (mobile)
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', false);
+        });
+      });
+
+      // Navbar scroll style
+      window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      // Animate skill bars on scroll
+      const skillFills = document.querySelectorAll('.skill-fill');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.width = e.target.style.getPropertyValue('--pct');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      skillFills.forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>
