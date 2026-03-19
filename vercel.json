@@ -1,0 +1,6 @@
+{
+  "routes": [
+    { "src": "/jeux1/(.*)", "dest": "/front/jeux1/$1" },
+    { "src": "/(.*)", "dest": "/front/$1" }
+  ]
+}
