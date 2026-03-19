@@ -1,0 +1,8 @@
+{
+  "builds": [
+    {
+      "src": "front/jeux1/index.html",
+      "use": "@vercel/static"
+    }
+  ]
+}
