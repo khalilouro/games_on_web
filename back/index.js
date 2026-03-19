@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const app = express();
 const dotenv = require('dotenv');
 
 dotenv.config();
-
-const app = express();
+const port =  process.env.PORT || 3000;
 
 const connectDB = require('./connectDB/connectDB');
 connectDB();
@@ -18,4 +18,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../front/index.html'));
 });
 
-module.exports = app;
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+
+    
