@@ -24,5 +24,5 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-
-    
+// Nécessaire pour que Vercel puisse utiliser Express comme Serverless Function
+module.exports = app;
