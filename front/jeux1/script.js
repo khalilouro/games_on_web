@@ -651,7 +651,7 @@ class Enemy {
     throwBall(balls) {
         const startX = this.x + this.size / 2;
         const startY = this.y + this.size;
-
+        balls.push(new Ball(startX, startY));
     }
 
     draw(ctx) {
