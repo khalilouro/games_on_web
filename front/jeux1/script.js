@@ -107,7 +107,23 @@ class AudioManager {
     }
 }
 
-new AudioManager();
+AudioManager.instance = new AudioManager();
+AudioManager.startPlaylist = function() {
+    return AudioManager.instance.startPlaylist();
+};
+AudioManager.pauseMusic = function() {
+    return AudioManager.instance.pauseMusic();
+};
+AudioManager.resumeMusic = function() {
+    return AudioManager.instance.resumeMusic();
+};
+AudioManager.stopMusic = function() {
+    return AudioManager.instance.stopMusic();
+};
+AudioManager.playSound = function(key, onEnded = null) {
+    return AudioManager.instance.playSound(key, onEnded);
+};
+
 const ScoreManager = {
     SAVE_KEY: "pixel_chase_scores",
 
