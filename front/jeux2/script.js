@@ -1,4 +1,4 @@
-﻿let firstPivotCell = null;
+let firstPivotCell = null;
 let firstGroup = null;
 let cells = [];
 let currentImage = '';
@@ -12,9 +12,9 @@ const levels = {
     1: { image: 'asset/image/image1.jpg', title: "Niveau 1" },
     2: { image: 'asset/image/image2.png', title: "Niveau 2" },
     3: { image: 'asset/image/image3.png', title: "Niveau 3" },
-    4: { image: 'asset/image/image5.png', title: "Niveau 4 - Sous l'OcÃ©an" },
+    4: { image: 'asset/image/image5.png', title: "Niveau 4 - Sous l'Océan" },
     5: { image: 'asset/image/image6.png', title: "Niveau 5 - Cosmos" },
-    6: { image: 'asset/image/image7.png', title: "Niveau 6 - ForÃªt Magique" },
+    6: { image: 'asset/image/image7.png', title: "Niveau 6 - Forêt Magique" },
     7: { image: 'asset/image/image8.png', title: "Niveau 7 - Pyramides" },
     8: { image: 'asset/image/image9.png', title: "Niveau 8 - Cyberpunk" },
     9: { image: 'asset/image/image10.png', title: "Niveau 9 - Repaire du Dragon" }
@@ -27,7 +27,7 @@ const ProgressManager = {
         
         try {
             const parsed = JSON.parse(saved);
-            // On s'assure que unlockedLevels existe bien (fusion avec l'Ã©tat par dÃ©faut)
+            // On s'assure que unlockedLevels existe bien (fusion avec l'état par défaut)
             return { 
                 currentLevel: parsed.currentLevel || 1, 
                 unlockedLevels: parsed.unlockedLevels || [1], 
@@ -218,8 +218,8 @@ function checkWin(cols, rows) {
             if (updatedProgress.revealedPieces >= 9 && levelFinished === 9) {
                 triggerVictory();
             } else {
-                // Utilisation de guillemets simples pour Ã©viter les bugs d'encodage selon le navigateur
-                alert('Bravo ! Niveau ' + levelFinished + ' terminÃ©. Une nouvelle partie de la photo est rÃ©vÃ©lÃ©e !');
+                // Utilisation de guillemets simples pour éviter les bugs d'encodage selon le navigateur
+                alert('Bravo ! Niveau ' + levelFinished + ' terminé. Une nouvelle partie de la photo est révélée !');
                 goToHome();
             }
         }, 300);
@@ -327,7 +327,7 @@ function createConfetti() {
 }
 
 function restartGame() {
-    if (confirm("Voulez-vous vraiment recommencer l'aventure depuis le dÃ©but ?")) {
+    if (confirm("Voulez-vous vraiment recommencer l'aventure depuis le début ?")) {
         localStorage.removeItem('puzzleProgress');
         document.getElementById('victory-screen').classList.add('hidden');
         document.getElementById('home-screen').classList.remove('hidden');
