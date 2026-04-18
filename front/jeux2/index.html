@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu - DOM</title>
-    <link rel="icon" type="image/png" href="../assets/images/Logo.png">
+    <title>Fragment</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="asset/image/image4.png">
+    <style>
+        .back-to-hub {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .back-to-hub:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
 </head>
+
 <body>
-    
+
     <div id="home-screen" class="screen">
         <div class="hero">
-            <h1>Jeu de Puzzle</h1>
-            <p>Choisissez un niveau pour commencer l'aventure.</p>
+            <h1>Fragment</h1>
+            <a href="../game.html" class="back-to-hub">← Menu Principal</a>
         </div>
 
         <div class="landing-grid-container">
@@ -30,7 +52,7 @@
             <button onclick="goToHome()" class="btn-back">← Retour</button>
             <h2 id="level-title">Niveau 1</h2>
         </div>
-        
+
         <div class="grid-container">
             <div class="grid" id="puzzle-grid">
                 <!-- Les cases seront générées en JS -->
@@ -38,6 +60,25 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <div id="victory-screen" class="screen hidden">
+        <div id="confetti-container"></div>
+        <div class="hero">
+            <h1>FÉLICITATIONS !</h1>
+            <p>Vous avez relevé tous les défis et complété le puzzle mystère !</p>
+        </div>
+
+        <div class="victory-content">
+            <div class="full-reward-container">
+                <img id="full-reward-img" src="asset/image/image4.png" alt="Récompense finale">
+            </div>
+
+            <div class="victory-actions">
+                <button onclick="restartGame()" class="btn-primary">Recommencer l'aventure</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

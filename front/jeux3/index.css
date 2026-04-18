@@ -1,0 +1,226 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Orbitron', sans-serif;
+    user-select: none;
+}
+
+#renderCanvas {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    outline: none;
+}
+
+/* UI ELEMENTS GLASSMORPHISM */
+.hud-panel {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 25px;
+    color: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+#distance {
+    top: 25px;
+    left: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-left: 4px solid #00ff88;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#speedometer {
+    bottom: 25px;
+    left: 25px;
+    font-size: 42px;
+    font-weight: 900;
+    font-style: italic;
+    color: #00ffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    min-width: 280px;
+    padding-top: 10px;
+}
+
+#speedometer span {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 10px;
+    opacity: 0.7;
+}
+
+#boostContainer {
+    position: absolute;
+    bottom: 110px;
+    left: 25px;
+    width: 330px;
+    z-index: 10;
+}
+
+#boostLabel {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.824);
+}
+
+#boostBarBg {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#boostBar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #0cebeb, #20e3b2, #29ffc6);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    transition: width 0.1s linear;
+}
+
+.boostTextActive {
+    color: #ff006e !important;
+    text-shadow: 0 0 15px #ff006e !important;
+}
+
+#minimap {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 140px;
+    height: 280px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    z-index: 5;
+}
+
+#countdownDisplay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 180px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 0, 110, 0.6);
+    z-index: 100;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#finishWarning {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 0, 110, 0.2);
+    border: 2px solid #ff006e;
+    padding: 10px 40px;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-shadow: 0 0 10px #ff006e;
+    backdrop-filter: blur(5px);
+    animation: blink 0.6s infinite alternate;
+    display: none;
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 400px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 60px;
+    text-align: center;
+    color: white;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 1);
+}
+
+#gameOver h1 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(to bottom, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#gameOver p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+#gameOver button {
+    margin-top: 40px;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 15px 50px;
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#gameOver button:hover {
+    transform: scale(1.1);
+    background: #00ff88;
+}
+
+#photoButton {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#photoButton:hover {
+    background: #00ff88;
+    color: black;
+    transform: rotate(15deg) scale(1.1);
+}
+
+@keyframes blink {
+    from { opacity: 1; transform: translateX(-50%) scale(1); }
+    to { opacity: 0.7; transform: translateX(-50%) scale(1.05); }
+}

@@ -1,13 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html>
 
-    <h1>Jeux 3</h1>
-    
+<head>
+    <meta charset="utf-8">
+    <title>ASPHALT LEGENDS 🏎️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+    <!-- Module GTLF/GLB pour charger les modèles ultra réalistes -->
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .back-to-hub {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 2000;
+            transition: 0.3s;
+        }
+        .back-to-hub:hover {
+            background: rgba(236, 72, 153, 0.6);
+            border-color: #ec4899;
+        }
+        #gameOver .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <div id="distance" class="hud-panel">POS: 1 | DISTANCE: 0M</div>
+    <div id="speedometer" class="hud-panel">0<span>KM/H</span></div>
+    <div id="boostContainer">
+        <div id="boostLabel">BOOST (Maintiens ESPACE)</div>
+        <div id="boostBarBg">
+            <div id="boostBar"></div>
+        </div>
+    </div>
+    <div id="finishWarning">FINISH LINE AHEAD!</div>
+    <div id="countdownDisplay">3</div>
+    <canvas id="minimap" width="150" height="300"></canvas>
+    <button id="photoButton">📸</button>
+    <a href="../game.html" class="back-to-hub">← PORTAIL</a>
+    <div id="gameOver">
+        <h1 id="gameResult">GAME OVER!</h1>
+        <p id="finalInfo">...</p>
+        <div class="btn-group">
+            <button onclick="location.reload()">RETRY</button>
+            <button onclick="window.location.href='../game.html'">MENU</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -236,3 +236,73 @@ body {
 .merged-top {
     padding-top: 0 !important;
 }
+/* --- ÉCRAN DE VICTOIRE --- */
+#victory-screen {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.victory-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.full-reward-container {
+    max-width: 600px;
+    width: 90%;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(99, 102, 241, 0.5);
+    border: 4px solid var(--primary);
+    transform: scale(0.95);
+    animation: rewardPop 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes rewardPop {
+    to { transform: scale(1); }
+}
+
+#full-reward-img {
+    width: 100%;
+    display: block;
+}
+
+/* --- PAILLETTES (CONFETTI) --- */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.confetti {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.victory-actions {
+    margin-top: 2rem;
+}

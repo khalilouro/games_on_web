@@ -4,13 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Chase</title>
-    <link rel="icon" type="image/png" href="../assets/images/Logo.png">
+    <title>Pixel Chase Squelette</title>
+    <link rel="icon" type="image/png" href="assets/images/logo_icon.png">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
+    <style>
+        .back-to-hub {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background 0.3s;
+        }
+        .back-to-hub:hover {
+            background: rgba(99, 102, 241, 0.8);
+        }
+    </style>
+    <a href="../game.html" class="back-to-hub">← Menu Principal</a>
     <canvas id="gameCanvas"></canvas>
 </body>
 
