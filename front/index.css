@@ -313,7 +313,7 @@ body {
   .nom {
     font-size: 2.2rem;
   }
-  
+
   .divmaman {
     flex-direction: column;
     padding: 40px 20px;
@@ -356,9 +356,11 @@ body {
 
   .toggle.toggle-active {
     position: fixed;
-    right: 60px; /* (150px sidebar / 2) - (30px toggle / 2) = 60px */
+    right: 60px;
+    /* (150px sidebar / 2) - (30px toggle / 2) = 60px */
     transform: none;
-    top: 15px; /* Stay aligned with header row height */
+    top: 15px;
+    /* Stay aligned with header row height */
   }
 
   .toggle-active .rectangle {

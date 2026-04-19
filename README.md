@@ -2,9 +2,9 @@
 
 Ludusgame est une plateforme de jeux en ligne interactive développée dans un cadre scolaire. Le projet propose une variété de jeux accessibles directement via le navigateur, avec un système de gestion d'utilisateurs.
 
-## Développeur
+## Développeurs
 
-Ce site a été entièrement conçu et développé par **Rahmouni Mohamed Khalil**.
+Ce site a été développé par **Rahmouni Mohamed khalil** pour un projet web avec **El Rifai Riham**.
 
 ## Technologies Utilisées
 
