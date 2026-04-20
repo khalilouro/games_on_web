@@ -2,6 +2,8 @@
 
 **Save The Recipe** est un jeu de plateforme dynamique inspiré de l'univers de Bob l'éponge. Incarnez notre héros et empêchez Plankton de s'emparer de la célèbre recette secrète du Pâté de Crabe !
 
+Une vidéo de démonstration est disponible ici : https://youtu.be/5gMsZkk8MOc?si=Ndh1NeVXA1eTROHF
+
 ## Présentation du Jeu
 
 Plankton a encore frappé ! Il tente de s'échapper avec la formule secrète. Votre mission est de naviguer à travers différents niveaux, d'éviter les pièges, de vaincre les sbires de Plankton et de l'affronter directement pour récupérer le précieux trésor.
@@ -71,6 +73,12 @@ Le développement de ce projet a suivi une approche itérative intégrant plusie
 Ce projet a été réalisé par :
 - **Rahmouni Mohamed Khalil**
 - **El Rifai Riham**
+
+## Références des jeux
+
+- Code du 1er jeu : https://github.com/rihamrifaii12-droid/TP_Khalil_Riham
+- Code du 2ème jeu : https://github.com/khalilouro/Jeu_DOM
+- Code du 3ème jeu : https://github.com/rihamrifaii12-droid/JeuKhalilRiham
 
 ---
 *Développé dans le cadre d'un projet universitaire.*
